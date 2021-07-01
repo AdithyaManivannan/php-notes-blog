@@ -1,0 +1,109 @@
+<?php
+
+error_reporting(1);
+
+$arr=array(array("name"=>"neeraj","mob"=>342353534),
+           array("name"=>"rohit","mob"=>34235),
+           array("name"=>"deepak","mob"=>33534)
+          );
+
+echo '<table border="2">';
+
+echo '<tr>';
+
+echo '<td align="center">Name:</td>';
+
+echo '<td align="center">MOb:</td>';
+
+foreach($arr as $k)
+
+{
+
+echo '<tr>';
+
+foreach($k as $v)
+
+{
+
+echo '<td align="center">'.$v.'</td>';
+
+}
+
+echo '</tr>';
+
+}
+
+echo '</table>';
+
+?>
+
+Output
+Name	Mobile
+neeraj	342353534
+rohit	34235
+deepak	33534
+Two dimensional associative array
+Display city according to selected country
+<?php
+
+ $country=array("ind"=>array("Lucknow","Rajasthan","Delhi"),
+            "pak"=>array("Islamabad","Lahore"),
+            "ch"=>array("ch1","ch2")
+           );
+
+if(isset($_GET['display']))
+
+ {
+
+ $get_country=$_GET['c'];
+
+echo "City ";
+
+ foreach($country as $country_key => $cname)
+
+   {
+
+     if($country_key==$get_country)
+
+	   {
+
+         echo "<select>";
+
+       foreach($cname as $state)
+
+         {
+	 echo "<option>".$state."</option>";
+
+	  }
+
+	 echo "</select>"; 
+
+           }
+
+      }
+
+ }
+
+?>
+
+<form method="get">
+
+<select name="c">
+
+<option value="ind">india</option>
+
+<option value="pak">Pak</option>
+
+<option value="ch">china</option>
+
+</select>
+
+<input type="submit" value="submit" name="display"/>
+
+</form>
+
+Output select country 
+Lucknow
+ City 
+india
+ 
